@@ -1,0 +1,226 @@
+.homePageSection{
+	font-family: var(--font-inter);
+}
+.firstSection {
+	position: relative;
+	display: flex;
+	background: var(--primary-grey);
+	justify-content: space-between;
+	align-items: center;
+	height: 722.53px;
+	border-bottom: 2px solid var(--primary-black);
+	overflow: hidden;
+}
+
+.firstSection img {
+	height: 100%;
+	width: 40%;
+	object-fit: contain;
+	margin-right: 25%;
+}
+
+.firstSection .textArea {
+	display: flex;
+	width: 450px;
+	flex-direction: column;
+	gap: 40px;
+	justify-content: center;
+	margin-left: 12%;
+}
+.firstSection .textArea h1 {
+	margin: 0;
+	padding: 0;
+}
+.firstSection .textArea button {
+	cursor: pointer;
+	font-size: 17.58px;
+	border: 2px solid var(--primary-black);
+	color: var(--primary-black);
+	background: var(--primary-white);
+	height: 60px;
+	width: 50%;
+	font-weight: 600;
+	border-radius: 5px;
+}
+.secondSection {
+	display: flex;
+	background: var(--primary-grey);
+	justify-content: space-between;
+	height: 608px;
+	border-bottom: 2px solid var(--primary-black);
+}
+.secondSection .latestCollectionTextDiv {
+	color: white;
+	display: flex;
+	box-sizing: border-box;
+	flex-direction: column;
+	background: var(--primary-black);
+	width: 475px;
+	gap: 40px;
+	padding: 2% 3%;
+}
+.secondSection .latestCollectionTextDiv h1 {
+	font-weight: 600;
+	font-size: 31.94px;
+	margin: 0;
+	padding: 0;
+}
+.secondSection .latestCollectionTextDiv p {
+	font-weight: 300;
+	font-size: 16.31px;
+	margin: 0;
+	padding: 0;
+}
+.secondSection .latestCollectionTextDiv button {
+	cursor: pointer;
+	width: 50%;
+	height: 60px;
+	background: var(--primary-red);
+	border: none;
+	border-radius: 6px;
+	color: white;
+	font-size: 17.72px;
+	font-weight: 600;
+}
+.thirdSection {
+	background: var(--primary-red);
+	height: 421.9px;
+	box-sizing: border-box;
+	padding: 2% 3%;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	border-bottom: 2px solid var(--primary-black);
+}
+.thirdSection h1 {
+	padding: 0;
+	margin: 0;
+	font-size: 96px;
+	font-family: var();
+	color: #040404;
+	font-weight: 500;
+}
+.thirdSection p {
+	padding: 0;
+	margin: 0;
+	font-size: 40px;
+	color: #040404;
+	font-weight: 500;
+}
+.fourthSection {
+	box-sizing: border-box;
+	display: flex;
+	height: 735px;
+	background: var(--primary-grey);
+	border-bottom: 2px solid var(--primary-black);
+}
+.fourthSection article {
+	padding: 10%;
+}
+.fourthSection article h1 {
+	font-size: 40.7px;
+	padding-bottom: 30px;
+	color: var(--primary-black);
+	font-weight: 600;
+}
+.fourthSection article p {
+	width: 80%;
+	font-size: 16.17px;
+	color: var(--primary-black);
+	font-weight: 300;
+}
+.fifthSection {
+	box-sizing: border-box;
+	height: 1050px;
+	display: flex;
+	background: var(--primary-grey);
+	border-bottom: 2px solid var(--primary-black);
+}
+.fifthSection .textArea {
+	margin: auto auto;
+	color: var(--primary-black);
+}
+.fifthSection img {
+	width: 720px;
+	height: 100%;
+}
+.fifthSection .textArea h1 {
+	font-weight: 600;
+	font-size: 33.1px;
+}
+.fifthSection .textArea p {
+	font-weight: 300;
+	font-size: 16.45px;
+}
+.fifthSection .textArea button {
+	height: 60px;
+	width: 50%;
+	border: none;
+	background: var(--primary-black);
+	color: var(--primary-white);
+	font-size: 17.86px;
+	border-radius: 6px;
+	margin-top: 30px;
+}
+.sixthSection {
+	display: flex;
+	box-sizing: border-box;
+	height: 1500px;
+	border-bottom: 2px solid var(--primary-black);
+}
+.sixthSection .reviewsDiv {
+	font-weight: 600;
+	width: 720px;
+	gap: 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 40px;
+}
+
+.sixthSection .reviewsDiv .reviewCard {
+  background: #fafafa; 
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 32px 28px;
+  text-align: center;
+  max-width: 100%;
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.sixthSection .reviewsDiv .reviewCard.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sixthSection .reviewsDiv .reviewStars {
+  color: black; 
+  font-size: 16px;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+
+.sixthSection .reviewsDiv .reviewText {
+  font-size: 17px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  color: #222;
+}
+
+.sixthSection .reviewsDiv .reviewName {
+  font-weight: 600;
+  font-size: 15px;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.sixthSection img {
+	flex: 1;
+}

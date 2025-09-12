@@ -1,0 +1,13 @@
+.topBarDiv {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--primary-black);
+	max-height: 38.18px;
+}
+.text{
+	color: white;
+	font-weight: 600;
+	font-family: var(--font-inter);
+	font-size: 13.67px;
+}

@@ -1,0 +1,78 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-grey);
+  height: 89px;
+  border-bottom: 2px solid var(--primary-black);
+  font-size: 16.03px;
+  font-family: var(--font-inter);
+  font-weight: 600;
+  padding-right: 40px;
+  box-sizing: border-box;
+}
+.header a {
+  text-decoration: none;
+  color: var(--primary-black);
+}
+.leftMenu nav ul,
+.rightMenu nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.brandText {
+  font-family: var(--font-anton);
+  font-size: 43px;
+  text-align: center;
+  font-weight: 400;
+  padding-right: 8%;
+}
+.menuDownArrowIcon {
+  font-size: 17px;
+  cursor: pointer;
+}
+.menuItemWrapper {
+  position: relative;
+}
+.menuTrigger {
+  display: inline-block;
+  cursor: pointer;
+}
+.menuTrigger:hover {
+  cursor: pointer;
+}
+.dropDownMenu {
+  width: 50vw;
+  height: 723px;
+  position: absolute;
+  background: black;
+  font-size: 32px;
+  top: 55px;
+  left: -50px;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+.dropDownMenu h6 {
+  font-weight: 300;
+  font-size: 16.31px;
+  padding-top: 50px;
+  padding-left: 50px;
+  color: white;
+}
+.dropDownMenu ul {
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-top: 30px;
+}
+.dropDownMenu ul li a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+.dropDownMenu ul li a:hover {
+  color: #ff3d22;
+}

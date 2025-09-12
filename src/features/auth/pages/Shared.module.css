@@ -1,0 +1,119 @@
+.loginOrSignUpPage {
+	display: flex;
+	justify-content: space-between;
+	font-family: var(--font-poppins);
+	box-sizing: border-box;
+}
+.formSection {
+	width: 404px;
+	align-self: center;
+	flex-direction: column;
+	display: flex;
+	margin: 0 auto;
+	gap: 30px;
+}
+.formSection h1 {
+	font-weight: 500;
+	font-size: 32px;
+}
+.formSection form {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+.formGroup {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+}
+
+.formGroup label {
+	font-weight: 500;
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+
+.formGroup input {
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	font-size: 14px;
+}
+.formGroup input:focus {
+	outline: 1px solid var(--primary-red);
+	border: none;
+}
+.privacyPolicyCheckboxDiv {
+	font-size: 9px;
+	font-weight: 500;
+}
+.privacyPolicyCheckboxDiv input{
+	width: 9px;
+	height: 9px;
+}
+.privacyPolicyCheckboxDiv input[type="checkbox"]{
+	accent-color: var(--primary-red);
+	cursor: pointer;
+}
+.privacyPolicyCheckboxDiv a{
+	text-decoration: none;
+	color: black;
+	text-decoration: underline;
+}
+.forgotPasswordButton{
+	display: flex-end;
+	background-color: none;
+	color: var(--primary-red);
+}
+.formSection form button {
+	background: var(--primary-red);
+	border: none;
+	padding: 10px;
+	font-weight: 700;
+	color: white;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+.formSection form button:hover {
+	background: var(--primary-red-hover);
+}
+.divider {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	color: #666;
+	font-size: 9px;
+	margin: 20px 0;
+}
+
+.divider::before,
+.divider::after {
+	content: "";
+	flex: 1;
+	border-bottom: 1px dotted #ccc;
+}
+.thirdPartyLoginDiv {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+.thirdPartyLoginDiv button {
+	cursor: pointer;
+}
+.loginText {
+	text-align: center;
+	font-weight: 500;
+	font-size: 14px;
+	font-family: var(--font-poppins);
+}
+.loginText a {
+	text-decoration: none;
+	color: var(--primary-red);
+}
+.welcomeBackImg {
+  width: 800px;
+  height: 1200px;
+  border-top-left-radius: 45px;  
+  border-bottom-left-radius: 45px; 
+}
