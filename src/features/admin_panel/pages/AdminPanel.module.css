@@ -1,0 +1,69 @@
+.adminPanel {
+	display: flex;
+	min-height: 100vh;
+	background: var(--background-light, #f9f9fb);
+	font-family: var(--font-inter, "Inter", sans-serif);
+}
+
+.adminPanel menu {
+	max-width: 280px;
+	width: 100%;
+	margin: 0;
+	padding: 2rem 1rem;
+	background: var(--primary-black, #d43c3c);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	border-right: 2px solid rgba(255, 255, 255, 0.2);
+	box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.adminPanel menu ul {
+	list-style: none;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	padding: 0;
+	margin: 0;
+}
+
+.adminPanel menu ul li {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 0.7rem 1rem;
+	border-radius: 8px;
+	color: var(--primary-white, #fff);
+	font-size: clamp(0.9rem, 1vw, 1.7rem);
+	font-weight: 500;
+	transition: all 0.25s ease;
+}
+
+.adminPanel menu ul li:hover {
+	cursor: pointer;
+	background: rgba(255, 255, 255, 0.15);
+	transform: translateX(4px);
+}
+
+.adminPanel menu ul li.active {
+	background: var(--primary-white, #fff);
+	color: var(--primary-red, #d43c3c);
+	font-weight: 600;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.adminPanel menu ul li i {
+	font-size: 1.2rem;
+	opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+	.adminPanel menu {
+		max-width: 220px;
+		padding: 1.5rem 0.75rem;
+	}
+	.adminPanel menu ul li {
+		padding: 0.6rem 0.75rem;
+	}
+}

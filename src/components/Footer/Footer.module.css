@@ -3,6 +3,7 @@
 	justify-content: space-between;
 	height: 294.5px;
 	box-sizing: border-box;
+	border-top: 2px solid var(--primary-black);
 	border-bottom: 2px solid var(--primary-black);
 }
 

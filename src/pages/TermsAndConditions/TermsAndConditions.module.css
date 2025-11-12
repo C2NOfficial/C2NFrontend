@@ -1,0 +1,123 @@
+.container {
+  padding: 1.5rem 2rem;
+  max-width: 780px;
+  margin: 0 auto;
+  font-size: clamp(0.9rem, 1vw + 0.5rem, 1rem);
+  line-height: 1.7;
+  color: #222;
+  font-family: var(--font-inter);
+}
+
+.title {
+  font-size: clamp(1.8rem, 2.2vw + 1rem, 2.4rem);
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: var(--primary-black);
+  line-height: 1.2;
+  text-align: center;
+}
+
+.lastUpdated {
+  margin-bottom: 1rem;
+  font-style: italic;
+  color: #555;
+  font-size: clamp(0.8rem, 0.8vw + 0.5rem, 0.95rem);
+  text-align: center;
+}
+
+.paragraph {
+  margin-bottom: 1.25rem;
+  font-size: clamp(0.9rem, 0.9vw + 0.5rem, 1rem);
+  color: var(--primary-text-color);
+}
+
+.sectionTitle {
+  font-size: clamp(1.1rem, 1.2vw + 0.6rem, 1.3rem);
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: #111;
+  border-bottom: 1px solid var(--primary-grey);
+  padding-bottom: 0.25rem;
+}
+
+.list {
+  list-style-type: disc;
+  margin-left: 2rem;
+  margin-bottom: 1.25rem;
+  font-size: clamp(0.9rem, 0.8vw + 0.5rem, 1rem);
+}
+
+.list li {
+  margin-bottom: 0.5rem;
+}
+.termsAndConditionsDialog{
+  border: none;
+  position: relative;
+  max-width: 600px;
+  height: 70%;
+  border-radius: 10px;
+}
+.termsAndConditionsDialog .closeButton{
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--primary-grey);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  line-height: 1;
+}
+
+.closeButton:hover {
+  color: var(--primary-red);
+  transform: scale(1.1);
+}
+.agreebuttonDiv {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 20px;
+}
+
+.agreebuttonDiv button {
+  min-width: 120px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Disagree Button */
+.agreebuttonDiv button:first-child {
+  background-color: var(--primary-grey);
+  color: black;
+}
+
+.agreebuttonDiv button:first-child:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Agree Button */
+.agreebuttonDiv button:last-child {
+  background-color: var(--primary-red);
+  color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.agreebuttonDiv button:last-child:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}

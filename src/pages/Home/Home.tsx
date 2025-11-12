@@ -1,8 +1,4 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import homePageSection1 from "../../assets/HomePageSection1.webp";
-import homePageSection4 from "../../assets/HomePageSection4.webp";
-import homePageSection5 from "../../assets/HomePageSection5.webp";
-import homePageSection6 from "../../assets/HomePageSection6.webp";
 import styles from "./Home.module.css";
 import { faArrowRight, faStar } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
@@ -43,7 +39,7 @@ const Home: React.FC<HomeProps> = ({ Reviews }) => {
 						SHOP NOW <FontAwesomeIcon icon={faArrowRight} />
 					</button>
 				</div>
-				<img src={homePageSection1} alt="first-section" />
+				<img src="public/HomePageSection1.webp" alt="first-section" />
 			</section>
 			<section className={styles.secondSection}>
 				<div className={styles.latestCollectionTextDiv}>
@@ -68,7 +64,7 @@ const Home: React.FC<HomeProps> = ({ Reviews }) => {
 				<p>That's the C2N Promise!</p>
 			</section>
 			<section className={styles.fourthSection}>
-				<img src={homePageSection4} alt="section-4" />
+				<img src="public/HomePageSection4.webp" alt="section-4" />
 				<article>
 					<h1>ABOUT US - WHY CHOOSE C2N? </h1>
 					<p>
@@ -101,7 +97,7 @@ const Home: React.FC<HomeProps> = ({ Reviews }) => {
 				</article>
 			</section>
 			<section className={styles.fifthSection}>
-				<img src={homePageSection5} alt="section-5" />
+				<img src="public/HomePageSection5.webp" alt="section-5" />
 				<div className={styles.textArea}>
 					<h1>CLASSIC HOODIE</h1>
 					<p>
@@ -117,18 +113,18 @@ const Home: React.FC<HomeProps> = ({ Reviews }) => {
 			</section>
 			<section className={styles.sixthSection}>
 				<div className={styles.reviewsDiv}>
-					<h1>WHAT OUR CUSTOMERS ARE SAYING</h1>
+					<h1>REVIEWS ARE IN</h1>
+					<div className={styles.reviewStars}>
+						{Array.from({ length: review.rating }, (_, i) => (
+							<FontAwesomeIcon icon={faStar} key={i} />
+						))}
+					</div>
 					<div className={`${styles.reviewCard} ${styles.show}`}>
-						<div className={styles.reviewStars}>
-							{Array.from({ length: review.rating }, (_, i) => (
-								<FontAwesomeIcon icon={faStar} key={i} />
-							))}
-						</div>
 						<p className={styles.reviewText}>"{review.review}"</p>
 						<p className={styles.reviewName}>– {review.name}</p>
 					</div>
 				</div>
-				<img src={homePageSection6} alt="section-6" />
+				<img src="public/HomePageSection6.webp" alt="section-6" />
 			</section>
 		</section>
 	);

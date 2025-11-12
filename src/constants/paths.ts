@@ -2,6 +2,7 @@ export const PATHS = {
 	HOME: "/",
 	LOGIN: "/login",
 	DASHBOARD: "/dashboard",
+	ADMIN_PANEL: "/admin-panel",
 	REGISTER: "/register",
 	CART: "/cart",
 	NEW_ARRIVALS: "/new-arrivals",
@@ -15,5 +16,6 @@ export const PATHS = {
 	REFUND_POLICY: "/refund-policy",
 	TERMS_AND_CONDITIONS: "/terms-and-conditions",
 	CONTACT_US: "/contact-us",
-	PRIVACY_POLICY: "/privacy-policy",
-};
+	PRIVACY_POLICY: "/privacy-policy",	
+} as const;
+

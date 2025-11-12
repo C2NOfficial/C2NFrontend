@@ -58,7 +58,7 @@ const Header: React.FC = () => {
               <Link to={PATHS.WISHLIST}>WISHLIST</Link>
             </li>
             <li>
-              <Link to={PATHS.REGISTER}>DASHBOARD</Link>
+              <Link to={PATHS.DASHBOARD}>DASHBOARD</Link>
             </li>
           </ul>
         </nav>

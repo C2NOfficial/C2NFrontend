@@ -6,6 +6,13 @@ import { PATHS } from "./constants/paths";
 import Footer from "./components/Footer/Footer";
 import GetStarted from "./features/auth/pages/GetStarted";
 import WelcomeBack from "./features/auth/pages/WelcomeBack";
+import LoadingOverlay from "./components/LoadingOverlay/LoadingOverlay";
+import TermsAndConditions from "./pages/TermsAndConditions/TermsAndConditions";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import Dashboard from "./features/dashboard/pages/Dashboard";
+import AdminPanel from "./features/admin_panel/pages/AdminPanel";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
 	const reviews = [
@@ -17,7 +24,7 @@ const App = () => {
 		},
 		{
 			rating: 4,
-			review: "This is a test review",
+			review: "This is a test review. This is just another text to check how much space is required for a big review and leaving the details",
 			name: "Jane Doe",
 			date: "2022-01-01",
 		},
@@ -58,6 +65,18 @@ const App = () => {
 					}
 				/>
 				<Route
+					path={PATHS.DASHBOARD}
+					element={
+						<Dashboard />
+					}
+				/>
+				<Route
+					path={PATHS.ADMIN_PANEL}
+					element={
+						<AdminPanel />
+					}
+				/>
+				<Route
 					path={PATHS.REGISTER}
 					element={
 						<MinimalLayout>
@@ -73,7 +92,18 @@ const App = () => {
 						</MinimalLayout>
 					}
 				/>
+				<Route
+					path={PATHS.TERMS_AND_CONDITIONS}
+					element={
+						<RegularLayout>
+							<TermsAndConditions />
+						</RegularLayout>
+					}
+				/>
 			</Routes>
+			<LoadingOverlay />
+			<ScrollToTop />
+			<ToastContainer position="top-right" autoClose={3000} />
 		</Router>
 	);
 };

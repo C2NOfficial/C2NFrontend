@@ -1,0 +1,102 @@
+{
+  "title": "Terms & Conditions",
+  "last_updated": "October 22, 2025",
+  "intro": {
+    "text": "Welcome to C2N (“we,” “us,” “our”). By accessing or using our website www.c2nshop.com, you agree to comply with and be bound by these Terms & Conditions (“Terms”). Please read them carefully before using our Site. If you do not agree to these Terms, you should not use our Site."
+  },
+  "sections": [
+    {
+      "title": "1. Use of the Website",
+      "contentType": "list",
+      "content": [
+        "You must be at least 18 years old to place an order.",
+        "You agree not to misuse the Site for unlawful purposes or attempt to disrupt its functionality.",
+        "We reserve the right to refuse service to anyone at any time."
+      ]
+    },
+    {
+      "title": "2. Product Information",
+      "contentType": "list",
+      "content": [
+        "We strive to display products as accurately as possible. However, colors and images may vary slightly due to screen settings.",
+        "All product descriptions, pricing, and availability are subject to change without notice."
+      ]
+    },
+    {
+      "title": "3. Orders & Payments",
+      "contentType": "list",
+      "content": [
+        "By placing an order, you agree to provide accurate and complete information.",
+        "All payments must be made through the payment methods provided at checkout.",
+        "Orders are confirmed only after payment is successfully processed.",
+        "We reserve the right to cancel or refuse any order if fraud or misuse is suspected."
+      ]
+    },
+    {
+      "title": "4. Shipping & Delivery",
+      "contentType": "list",
+      "content": [
+        "Shipping times are estimates and may vary depending on location and circumstances beyond our control.",
+        "We are not responsible for delays caused by courier services or unforeseen events.",
+        "Risk of loss passes to you once the order is handed over to the shipping provider."
+      ]
+    },
+    {
+      "title": "5. Returns & Refunds",
+      "contentType": "list",
+      "content": [
+        "Returns are accepted only in accordance with our Return & Refund Policy.",
+        "Items must be unworn, unused, and returned in original packaging with tags intact.",
+        "Refunds will be processed to the original payment method once the returned item is received and inspected."
+      ]
+    },
+    {
+      "title": "6. Pricing & Promotions",
+      "contentType": "list",
+      "content": [
+        "All prices are listed in [currency, e.g., INR].",
+        "We reserve the right to modify prices, discounts, or promotional offers at any time without notice."
+      ]
+    },
+    {
+      "title": "7. Intellectual Property",
+      "contentType": "list",
+      "content": [
+        "All content on the Site, including text, images, logos, and designs, is our property and protected under applicable intellectual property laws.",
+        "You may not reproduce, distribute, or use our content without prior written permission."
+      ]
+    },
+    {
+      "title": "8. Limitation of Liability",
+      "contentType": "list",
+      "content": [
+        "We are not liable for any indirect, incidental, or consequential damages arising from your use of our Site or products.",
+        "Our liability is limited to the value of the product purchased."
+      ]
+    },
+    {
+      "title": "9. Privacy",
+      "contentType": "paragraph",
+      "content": "Your personal information is collected and handled in accordance with our Privacy Policy."
+    },
+    {
+      "title": "10. Governing Law",
+      "contentType": "paragraph",
+      "content": "These Terms are governed by and construed in accordance with the laws of [Your Country/State]. Any disputes will be subject to the exclusive jurisdiction of the courts in [Your City/State]."
+    },
+    {
+      "title": "11. Changes to Terms",
+      "contentType": "paragraph",
+      "content": "We reserve the right to update or modify these Terms at any time. Changes will be effective once posted on the Site. Your continued use of the Site after changes are posted constitutes acceptance of those changes."
+    },
+    {
+      "title": "12. Contact Us",
+      "contentType": "paragraph",
+      "content": "If you have any questions about these Terms, please contact us at:",
+      "contact": {
+        "email": "",
+        "phone": ""
+      }
+    }
+  ]
+}
