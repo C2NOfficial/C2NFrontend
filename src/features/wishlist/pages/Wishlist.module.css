@@ -1,0 +1,131 @@
+.wrapper {
+	max-width: 1200px;
+	min-height: 50vh;
+	margin: auto;
+	padding: 4rem 2rem;
+	font-family: var(--font-jakarta);
+	color: var(--primary-text-color);
+}
+
+/* ================= Table ================= */
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 1.05rem;
+}
+
+.table thead tr th {
+	padding: 1.3rem 1rem;
+	border-bottom: 1px solid var(--primary-grey);
+	text-align: left;
+	font-family: var(--font-poppins);
+	font-weight: 500;
+	font-size: 1.1rem;
+	color: var(--primary-black);
+}
+
+.table tbody tr td {
+	padding: 1.3rem 1rem;
+	border-bottom: 1px solid var(--primary-grey);
+	vertical-align: middle;
+}
+
+/* ================= Remove Button ================= */
+
+.removeBtn {
+	background: none;
+	border: none;
+	font-size: 1.4rem;
+	cursor: pointer;
+	color: var(--error-red);
+	transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.removeBtn:hover {
+	transform: scale(1.1);
+	opacity: 0.8;
+}
+
+/* ================= Product Cell ================= */
+
+.product {
+	display: flex;
+	align-items: center;
+	gap: 1.2rem;
+}
+
+.product img {
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
+	border-radius: 8px;
+	background: var(--primary-grey);
+}
+
+.product span {
+	font-family: var(--font-poppins);
+	font-weight: 600;
+	font-size: 1.05rem;
+	color: var(--primary-black);
+}
+
+/* ================= Price ================= */
+
+.price {
+	font-family: var(--font-poppins);
+	font-weight: 500;
+	font-size: 1.05rem;
+	color: var(--primary-black);
+}
+
+/* ================= Stock ================= */
+
+.inStock {
+	color: #1a7f37;
+	font-weight: 500;
+}
+
+.outOfStock {
+	color: var(--error-red);
+	font-weight: 500;
+}
+
+/* ================= Add to Cart ================= */
+
+.cartBtn {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	padding: 0.7rem 1.6rem;
+	border-radius: 8px;
+	border: none;
+	background: var(--primary-black);
+	color: white;
+	font-family: var(--font-poppins);
+	font-size: 0.95rem;
+	cursor: pointer;
+	transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.cartBtn:hover:not(:disabled) {
+	background: var(--primary-black-hover);
+	transform: translateY(-1px);
+}
+
+.cartBtn:disabled {
+	background: var(--primary-grey);
+	cursor: not-allowed;
+	color: #888;
+}
+
+/* ================= Empty / Loading ================= */
+
+.empty,
+.loading {
+	text-align: center;
+	font-family: var(--font-poppins);
+	font-size: 1.2rem;
+	padding: 5rem 0;
+	color: var(--primary-text-color);
+}

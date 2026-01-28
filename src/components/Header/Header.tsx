@@ -4,10 +4,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import { PATHS } from "../../constants/paths";
+import { useCartContext } from "../../context/Cart";
 
 const Header: React.FC = () => {
   const [showDropdown, setShowDropDown] = React.useState(false);
-
+  const { cart } = useCartContext();
   return (
     <header className={styles.header}>
       <section className={styles.leftMenu}>
@@ -75,7 +76,7 @@ const Header: React.FC = () => {
               <Link to="">SEARCH</Link>
             </li>
             <li>
-              <Link to={PATHS.CART}>CART</Link>
+              <Link to={PATHS.CART}>CART({cart.length})</Link>
             </li>
           </ul>
         </nav>

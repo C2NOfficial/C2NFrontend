@@ -1,0 +1,131 @@
+.nativeDialog {
+  border: none;
+  border-radius: 18px;
+  padding: 0;
+  width: min(960px, 94%);
+  max-height: 88vh;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+.dialogHeader {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1rem 1.25rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dialogHeader h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.closeButton {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #6b7280;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.closeButton:hover {
+  background: #fee2e2;
+  color: var(--primary-red);
+}
+
+.mediaGrid {
+  padding: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.mediaItem,
+.mediaItemInactive {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 14px;
+  cursor: pointer;
+  background: #f8fafc;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    outline 0.15s ease;
+}
+
+.mediaItem {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+  outline: 3px solid rgba(239, 68, 68, 0.25);
+}
+
+.mediaItem:hover,
+.mediaItemInactive:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+  outline: 3px solid rgba(239, 68, 68, 0.25);
+}
+
+.mediaItem:active {
+  transform: scale(0.98);
+}
+
+.mediaItem video {
+  background: #000;
+}
+
+.loadMore {
+  margin: 0 1.25rem 1.25rem;
+  padding: 0.85rem;
+  width: calc(100% - 2.5rem);
+
+  background: var(--primary-red);
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.loadMore:hover {
+  background: var(--primary-red-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(239, 68, 68, 0.4);
+}
+
+.nativeDialog::-webkit-scrollbar {
+  width: 8px;
+}
+
+.nativeDialog::-webkit-scrollbar-thumb {
+  background: #e5e7eb;
+  border-radius: 4px;
+}
+
+.nativeDialog::-webkit-scrollbar-thumb:hover {
+  background: #d1d5db;
+}

@@ -1,0 +1,70 @@
+.initialLoadingText {
+	color: var(--primary-black);
+	font-size: 16px;
+	text-align: center;
+	margin-top: 400px;
+}
+.addButton {
+	position: absolute;
+	right: 50px;
+	bottom: 50px;
+	border: none;
+	width: 154px;
+	border-radius: 5px;
+	height: 60px;
+	background: var(--primary-red);
+	color: white;
+	font-family: var(--font-inter);
+	font-weight: 600;
+	font-size: 17px;
+	transition: background 0.2s ease-in-out;
+}
+.addButton:hover {
+	cursor: pointer;
+	background: var(--primary-red-hover);
+}
+.paginationContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	margin-top: 20px;
+	font-family: "Inter", sans-serif;
+}
+.loadingText {
+	color: #555;
+	font-size: 0.95rem;
+	font-weight: 500;
+}
+.noMoreText {
+	color: #999;
+	font-size: 0.9rem;
+}
+.loadMoreButton {
+	background-color: var(--primary-red);
+	color: #fff;
+	padding: 10px 20px;
+	font-size: 0.95rem;
+	font-weight: 600;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	transition:
+		background 0.25s ease,
+		transform 0.15s ease;
+}
+.loadMoreButton:hover {
+	background-color: var(--primary-red-hover);
+	transform: translateY(-1px);
+}
+.loadMoreButton:disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
+	transform: none;
+}
+.initialLoadingText {
+	color: var(--primary-black);
+	font-size: 16px;
+	text-align: center;
+	margin-top: 400px;
+}

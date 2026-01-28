@@ -2,12 +2,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Home.module.css";
 import { faArrowRight, faStar } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { PATHS } from "../../constants/paths";
 
 interface HomeProps {
 	Reviews: Array<any>;
 }
 
 const Home: React.FC<HomeProps> = ({ Reviews }) => {
+	const navigate = useNavigate();
 	const [review, setReview] = useState<any>(Reviews?.[0]);
 
 	useEffect(() => {
@@ -35,11 +38,11 @@ const Home: React.FC<HomeProps> = ({ Reviews }) => {
 							bring you the best without breaking the bank!
 						</p>
 					</div>
-					<button>
+					<button onClick={() => navigate(PATHS.SHOP_ALL)}>
 						SHOP NOW <FontAwesomeIcon icon={faArrowRight} />
 					</button>
 				</div>
-				<img src="public/HomePageSection1.webp" alt="first-section" />
+				<img src="HomePageSection1.webp" alt="first-section" />
 			</section>
 			<section className={styles.secondSection}>
 				<div className={styles.latestCollectionTextDiv}>
@@ -64,7 +67,7 @@ const Home: React.FC<HomeProps> = ({ Reviews }) => {
 				<p>That's the C2N Promise!</p>
 			</section>
 			<section className={styles.fourthSection}>
-				<img src="public/HomePageSection4.webp" alt="section-4" />
+				<img src="HomePageSection4.webp" alt="section-4" />
 				<article>
 					<h1>ABOUT US - WHY CHOOSE C2N? </h1>
 					<p>
@@ -97,7 +100,7 @@ const Home: React.FC<HomeProps> = ({ Reviews }) => {
 				</article>
 			</section>
 			<section className={styles.fifthSection}>
-				<img src="public/HomePageSection5.webp" alt="section-5" />
+				<img src="HomePageSection5.webp" alt="section-5" />
 				<div className={styles.textArea}>
 					<h1>CLASSIC HOODIE</h1>
 					<p>
@@ -124,7 +127,7 @@ const Home: React.FC<HomeProps> = ({ Reviews }) => {
 						<p className={styles.reviewName}>– {review.name}</p>
 					</div>
 				</div>
-				<img src="public/HomePageSection6.webp" alt="section-6" />
+				<img src="HomePageSection6.webp" alt="section-6" />
 			</section>
 		</section>
 	);

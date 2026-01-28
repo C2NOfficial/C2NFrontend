@@ -1,0 +1,373 @@
+/* ================= Page ================= */
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  font-family: var(--font-jakarta);
+  color: var(--primary-text-color);
+}
+
+/* ================= Layout ================= */
+
+.productContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: flex;
+  gap: 5rem;
+}
+
+/* ================= Images ================= */
+
+.imageSection {
+  width: 55%;
+}
+
+.mainImage {
+  width: 100%;
+  height: 720px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: var(--primary-grey);
+}
+
+.imageList {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 1.6rem;
+  flex-wrap: wrap;
+}
+
+.imageListItem {
+  width: 120px;
+  height: 150px;
+  border-radius: 8px;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.7;
+  border: 1px solid var(--primary-grey);
+  transition: all 0.25s ease;
+}
+
+.imageListItem:hover {
+  opacity: 1;
+  transform: translateY(-4px);
+  border-color: var(--primary-black);
+}
+
+/* ================= Product Info ================= */
+
+.productDetails {
+  width: 45%;
+  padding-top: 1rem;
+}
+
+.brand {
+  font-size: 1rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #777;
+  margin-bottom: 0.6rem;
+}
+
+.productName {
+  font-family: var(--font-anton);
+  font-size: 3rem;
+  margin-bottom: 0.6rem;
+  color: var(--primary-black);
+}
+
+.price {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 1.6rem;
+}
+
+.description {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+/* ================= Sizes ================= */
+
+.sizeSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+.sizeSection label{
+  font-weight: bold;
+}
+.sizeSection .sizeChart{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.sizeButton {
+  width: 44px;
+  height: 44px;
+  border-radius: 5px;
+  border: 1px solid var(--primary-grey);
+  background: transparent;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.sizeButton:hover {
+  border-color: var(--primary-black);
+}
+
+.sizeSelected {
+  background: var(--primary-black);
+  color: #ffffff;
+  border-color: var(--primary-black);
+}
+
+
+/* ================= Quantity ================= */
+
+.quantitySection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.qtyControl {
+  display: flex;
+  max-width: 100px;
+  align-items: center;
+  border: 1px solid var(--primary-grey);
+  border-radius: 5px;
+  overflow: hidden;
+  height: 36px;
+}
+
+.qtyBtn {
+  width: 36px;
+  height: 100%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s ease;
+}
+
+.qtyBtn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.qtyValue {
+  min-width: 36px;
+  text-align: center;
+  font-weight: 500;
+  user-select: none;
+}
+
+/* ================= CTA ================= */
+
+.addToCart {
+  width: 100%;
+  padding: 1rem;
+  background: var(--primary-red);
+  color: #ffffff;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    transform 0.2s ease;
+}
+
+.addToCart:hover {
+  background: var(--primary-red-hover);
+  transform: translateY(-1px);
+}
+
+/* ================= Secondary Actions ================= */
+
+.secondaryActions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.wishlistBtn,
+.buyNowBtn {
+  flex: 1;
+  padding: 0.9rem;
+  border: 1px solid var(--primary-black);
+  background: transparent;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.wishlistBtn:hover,
+.buyNowBtn:hover {
+  background: var(--primary-black);
+  color: #ffffff;
+}
+/* ================= Accordions ================= */
+
+.accordions {
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--primary-grey);
+}
+
+.accordion {
+  border-bottom: 1px solid var(--primary-grey);
+  padding: 0.8rem 0;
+}
+
+/* Remove default arrow */
+.accordion summary {
+  list-style: none;
+}
+
+.accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordionTitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--primary-black);
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+}
+
+/* Custom + / − indicator */
+.accordionTitle::after {
+  content: "+";
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #777;
+  transition: transform 0.25s ease;
+}
+
+.accordion[open] .accordionTitle::after {
+  content: "−";
+}
+
+/* Content */
+.accordionContent {
+  padding: 0.6rem 0 0.8rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* CMS content cleanup */
+.accordionContent p {
+  margin-bottom: 0.7rem;
+}
+
+.accordionContent ul {
+  padding-left: 1.2rem;
+  margin-bottom: 0.7rem;
+}
+
+.accordionContent li {
+  margin-bottom: 0.4rem;
+}
+/* ================= Size Guide Table ================= */
+
+.sizeTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  background: #ffffff;
+}
+
+/* Header */
+.sizeTable thead th {
+  padding: 0.9rem 0.8rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary-black);
+  border-bottom: 2px solid var(--primary-black);
+  background: #fafafa;
+}
+
+/* Body rows */
+.sizeTable tbody tr {
+  transition: background 0.2s ease;
+}
+
+.sizeTable tbody tr:hover {
+  background: #f7f7f7;
+}
+
+/* Cells */
+.sizeTable td {
+  padding: 0.9rem 0.8rem;
+  text-align: center;
+  border-bottom: 1px solid var(--primary-grey);
+  color: #444;
+  font-weight: 500;
+}
+
+/* First column (Size labels like S, M, L) */
+.sizeTable td:first-child {
+  font-weight: 600;
+  color: var(--primary-black);
+}
+
+/* Rounded corners */
+.sizeTable thead th:first-child {
+  border-top-left-radius: 6px;
+}
+
+.sizeTable thead th:last-child {
+  border-top-right-radius: 6px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+  .sizeTable {
+    font-size: 0.85rem;
+  }
+
+  .sizeTable thead th,
+  .sizeTable td {
+    padding: 0.7rem 0.5rem;
+  }
+}
+/* ================= Responsive ================= */
+
+@media (max-width: 1024px) {
+  .productContainer {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .imageSection,
+  .productDetails {
+    width: 100%;
+  }
+
+  .mainImage {
+    height: 520px;
+  }
+}

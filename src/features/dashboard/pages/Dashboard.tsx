@@ -1,49 +1,75 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import {
+	DASHBOARD_TABS,
+	DASHBOARD_TABS_BY_ROLE,
+} from "../../../constants/dashboard";
+import { SESSION_STORAGE_KEYS } from "../../../constants/browser_storage_keys";
+import styles from "./Dashboard.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
+import Categories from "../../categories/components/Categories";
 import { PATHS } from "../../../constants/paths";
-import { useLoadingOverlay } from "../../../context/LoadingOverlay";
-import type { User } from "../../../constants/user";
 import { toast } from "react-toastify";
+import { useAuth } from "../../../context/Auth";
+import Products from "../../products/components/Products";
+import Media from "../../media/components/Media";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
 
 const Dashboard = () => {
 	const navigate = useNavigate();
-	const { isLoading, showLoading, hideLoading } = useLoadingOverlay();
+	const { user, isAdmin, loading } = useAuth();
+	const [currentTab, setCurrentTab] = useState(
+		sessionStorage.getItem(SESSION_STORAGE_KEYS.ACTIVE_DASHBOARD_TAB) ||
+			DASHBOARD_TABS.ORDERS,
+	);
 
 	useEffect(() => {
-		showLoading();
-		fetch(import.meta.env.VITE_DASHBOARD_URL, {
-			credentials: "include",
-			method: "GET",
-		})
-			.then(async (response) => {
-				if (response.status === 401) {
-					navigate(PATHS.LOGIN);
-				}
-				if (response.status === 200) {
-					const apiResponse: ApiResponse<User> =
-						await response.json();
-					const user: User = apiResponse.data;
-					if (user.role === "admin") {
-						navigate(PATHS.ADMIN_PANEL);
-					}
-				}
-			})
-			.catch((error) => {
-				toast.error((error as Error).message);
-				navigate(PATHS.LOGIN);
-			})
-			.finally(() => {
-				hideLoading();
-			});
-	}, [navigate]);
+		if (loading) return;
 
-	if (!isLoading) {
-		return (
-			<section>
-				<h1>Dashboard</h1>
+		if (!user) {
+			toast.error("Please login to continue");
+			navigate(PATHS.LOGIN);
+		}
+	}, [user, loading, navigate]);
+
+	const tabs = isAdmin
+		? DASHBOARD_TABS_BY_ROLE.admin
+		: DASHBOARD_TABS_BY_ROLE.user;
+
+	return (
+		<section className={styles.adminPanel}>
+			<menu>
+				<ul>
+					{tabs.map((tab) => {
+						return (
+							<li
+								key={tab.key}
+								onClick={() => setCurrentTab(tab.key)}
+							>
+								<FontAwesomeIcon icon={tab.icon} />
+								{tab.label}
+							</li>
+						);
+					})}
+					<li onClick={() => navigate(PATHS.HOME)}>
+						<FontAwesomeIcon icon={faHome} />
+						Home
+					</li>
+				</ul>
+			</menu>
+			<section className={styles.adminPanelComponentSection}>
+				{currentTab === DASHBOARD_TABS.ORDERS && <div></div>}
+				{currentTab === DASHBOARD_TABS.PRODUCTS && <Products />}
+				{currentTab === DASHBOARD_TABS.CATEGORIES && <Categories />}
+				{currentTab === DASHBOARD_TABS.ANALYTICS && (
+					<div>Analytics</div>
+				)}
+				{currentTab === DASHBOARD_TABS.MEDIA && <Media />}
+				{currentTab === DASHBOARD_TABS.SETTINGS && <div>Settings</div>}
+				{currentTab === DASHBOARD_TABS.CUSTOMERS && <></>}
 			</section>
-		);
-	}
+		</section>
+	);
 };
 
 export default Dashboard;

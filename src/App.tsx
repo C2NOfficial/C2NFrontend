@@ -4,15 +4,22 @@ import Home from "./pages/Home/Home";
 import TopBar from "./components/TopBar/TopBar";
 import { PATHS } from "./constants/paths";
 import Footer from "./components/Footer/Footer";
-import GetStarted from "./features/auth/pages/GetStarted";
-import WelcomeBack from "./features/auth/pages/WelcomeBack";
 import LoadingOverlay from "./components/LoadingOverlay/LoadingOverlay";
 import TermsAndConditions from "./pages/TermsAndConditions/TermsAndConditions";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
-import Dashboard from "./features/dashboard/pages/Dashboard";
-import AdminPanel from "./features/admin_panel/pages/AdminPanel";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import SignIn from "./features/auth/pages/SignIn";
+import SignUp from "./features/auth/pages/SignUp";
+import ProductsDisplay from "./features/products/pages/ProductsDisplay";
+import SingleProductPage from "./features/products/pages/SingleProduct";
+import CartPage from "./features/cart/pages/Cart";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import Wishlist from "./features/wishlist/pages/Wishlist";
+import Dashboard from "./features/dashboard/pages/Dashboard";
+import Checkout from "./features/checkout/pages/Checkout";
+import PaymentFailure from "./features/payments/pages/PaymentFailure";
+import PaymentSuccess from "./features/payments/pages/PaymentSuccess";
 
 const App = () => {
 	const reviews = [
@@ -36,11 +43,11 @@ const App = () => {
 		<>
 			<TopBar
 				barText={[
-					"PRE-ORDER ARC ALARM CLOCK",
-					"30% DISCOUNT GOING ON RIGHT NOW",
-					"FREE SHIPPING ON ORDERS OVER $100",
-					"ACCEPTS ALL CREDIT CARDS",
-					"PREMIUM QUALITY",
+					"Crafted with Premium Fabrics",
+					"Secure Checkout via PayU",
+					"Support for Returns & Exchanges",
+					"Custom order with sleeve lengths, sleeve types and more",
+					"Made-to-Order Styles Available",
 				]}
 			/>
 			<Header />
@@ -65,22 +72,60 @@ const App = () => {
 					}
 				/>
 				<Route
-					path={PATHS.DASHBOARD}
+					path={PATHS.SINGLE_PRODUCT}
 					element={
-						<Dashboard />
+						<RegularLayout>
+							<SingleProductPage />
+						</RegularLayout>
 					}
 				/>
 				<Route
-					path={PATHS.ADMIN_PANEL}
+					path={PATHS.CART}
 					element={
-						<AdminPanel />
+						<RegularLayout>
+							<CartPage />
+						</RegularLayout>
+					}
+				/>
+				<Route
+					path={PATHS.CHECKOUT}
+					element={
+						<RegularLayout>
+							<Checkout />
+						</RegularLayout>
+					}
+				/>
+				<Route
+					path={PATHS.SHOP_ALL}
+					element={
+						<RegularLayout>
+							<ProductsDisplay />
+						</RegularLayout>
+					}
+				/>
+				<Route
+					path={PATHS.WISHLIST}
+					element={
+						<ProtectedRoute>
+							<RegularLayout>
+								<Wishlist />
+							</RegularLayout>
+						</ProtectedRoute>
+					}
+				/>
+				<Route
+					path={PATHS.DASHBOARD}
+					element={
+						<ProtectedRoute>
+							<Dashboard />
+						</ProtectedRoute>
 					}
 				/>
 				<Route
 					path={PATHS.REGISTER}
 					element={
 						<MinimalLayout>
-							<GetStarted />
+							<SignUp />
 						</MinimalLayout>
 					}
 				/>
@@ -88,7 +133,7 @@ const App = () => {
 					path={PATHS.LOGIN}
 					element={
 						<MinimalLayout>
-							<WelcomeBack />
+							<SignIn />
 						</MinimalLayout>
 					}
 				/>
@@ -97,6 +142,22 @@ const App = () => {
 					element={
 						<RegularLayout>
 							<TermsAndConditions />
+						</RegularLayout>
+					}
+				/>
+				<Route
+					path={PATHS.PAYMENT_FAILURE}
+					element={
+						<RegularLayout>
+							<PaymentFailure />
+						</RegularLayout>
+					}
+				/>
+				<Route
+					path={PATHS.PAYMENT_SUCCESS}
+					element={
+						<RegularLayout>
+							<PaymentSuccess />
 						</RegularLayout>
 					}
 				/>

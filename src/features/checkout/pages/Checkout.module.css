@@ -1,0 +1,110 @@
+/* =========================
+   Checkout Page Wrapper
+   ========================= */
+.checkout {
+  padding: 5rem 6rem;
+  min-height: 80vh;
+  font-family: var(--font-poppins);
+  background: #fafafa;
+}
+
+/* =========================
+   Stepper (Top Navigation)
+   ========================= */
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.step {
+  position: relative;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #777;
+  cursor: pointer;
+  padding-bottom: 0.4rem;
+  transition: color 0.2s ease;
+}
+
+.step:hover {
+  color: var(--primary-black);
+}
+
+.stepActive {
+  color: var(--primary-red);
+  font-weight: 600;
+}
+
+.stepActive::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--primary-red);
+}
+
+/* =========================
+   Main Checkout Layout
+   ========================= */
+.checkoutBody {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+/* =========================
+   Left: Step Content
+   ========================= */
+.stepContent {
+  background: white;
+  border-radius: 14px;
+  padding: 2.5rem;
+  min-height: 50vh;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.04),
+    0 1px 4px rgba(0, 0, 0, 0.03);
+}
+
+/* =========================
+   Right: Order Summary
+   ========================= */
+.summary {
+  position: sticky;
+  top: 120px;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 1024px) {
+  .checkout {
+    padding: 4rem 3rem;
+  }
+
+  .checkoutBody {
+    grid-template-columns: 1fr;
+  }
+
+  .summary {
+    position: static;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .checkout {
+    padding: 3rem 1.5rem;
+  }
+
+  .steps {
+    gap: 2rem;
+  }
+}

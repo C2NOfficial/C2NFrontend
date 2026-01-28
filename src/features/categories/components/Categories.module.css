@@ -1,0 +1,74 @@
+.categoriesSection {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+.categoriesDisplaySection {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 40px;
+	width: 100%;
+}
+
+.categoryCard {
+  background: #ffffff;
+  width: 85%;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  transition: box-shadow 0.15s ease;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.categoryCard:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+.categoryHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 12px;
+}
+.actions {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+.editBtn {
+	background: #e5f0ff;
+	color: #1d4ed8;
+	border: none;
+	padding: 4px 10px;
+	font-size: 0.8rem;
+	border-radius: 6px;
+	cursor: pointer;
+}
+.deleteBtn {
+	background: #fee2e2;
+	color: #b91c1c;
+	border: none;
+	padding: 4px 10px;
+	font-size: 0.8rem;
+	border-radius: 6px;
+	cursor: pointer;
+}
+.sizeChart summary {
+	cursor: pointer;
+	padding: 8px 0;
+	font-weight: 500;
+	color: #374151;
+}
+.sizeChart table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 10px;
+}
+.sizeChart td {
+	border: 1px solid #e5e7eb;
+	padding: 6px 10px;
+	font-size: 0.9rem;
+	color: #374151;
+}

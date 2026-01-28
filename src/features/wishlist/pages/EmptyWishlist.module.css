@@ -1,0 +1,67 @@
+/* ================= Empty Wishlist ================= */
+
+.emptyWrapper {
+	min-height: 60vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 4rem 2rem;
+}
+
+.emptyCard {
+	text-align: center;
+	max-width: 420px;
+	padding: 3rem 2.5rem;
+	border: 1px solid var(--primary-grey);
+	border-radius: 14px;
+	background: var(--primary-white);
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+}
+
+.iconCircle {
+	width: 90px;
+	height: 90px;
+	margin: 0 auto 1.8rem;
+	border-radius: 50%;
+	background: var(--primary-grey);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2.4rem;
+	color: var(--primary-black);
+}
+
+.emptyTitle {
+	font-family: var(--font-poppins);
+	font-size: 1.6rem;
+	font-weight: 600;
+	color: var(--primary-black);
+	margin-bottom: 0.8rem;
+}
+
+.emptyText {
+	font-size: 1rem;
+	font-family: var(--font-poppins);
+	color: var(--primary-text-color);
+	line-height: 1.6;
+	margin-bottom: 2rem;
+}
+
+/* ================= CTA ================= */
+
+.shopBtn {
+	padding: 0.95rem 2.6rem;
+	border-radius: 8px;
+	border: none;
+	background: var(--primary-black);
+	color: white;
+	font-family: var(--font-poppins);
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.shopBtn:hover {
+	background: var(--primary-black-hover);
+	transform: translateY(-1px);
+}

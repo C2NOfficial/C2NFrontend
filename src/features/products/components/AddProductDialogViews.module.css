@@ -1,0 +1,151 @@
+.addProductParentDiv{
+	background: #fff;
+	padding: 1.5rem;
+	border-radius: 12px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+.imagePreview{
+  cursor: grab;
+}
+.videoPreview{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	border-radius: 10px;
+}
+.imagePreview:active, .videoPreview:active {
+  cursor: grabbing;
+}
+.imagesDiv {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.imageUploadBox, .errorImageUploadBox {
+	width: 120px;
+	height: 120px;
+	margin-top: 10px;
+	margin-left: 10px;
+	border: 2px dashed #ccc;
+	border-radius: 12px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: #666;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	background-color: #fafafa;
+}
+.errorImageUploadBox{
+	border: 2px dashed red;
+}
+.errorImageUploadBox:hover{
+	border-color: red;
+}
+.imageUploadBox:hover {
+	border-color: #007bff;
+	color: #007bff;
+	background-color: #f0f8ff;
+}
+
+.plusSign, .errorPlusSign {
+	font-size: 2rem;
+	line-height: 1;
+}
+.errorPlusSign{
+	color: red;
+}
+.imagePreviewGrid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-top: 10px;
+}
+
+.imagePreview {
+	position: relative;
+	width: 120px;
+	height: 120px;
+	border-radius: 10px;
+	overflow: hidden;
+	cursor: pointer;
+	border: 1px solid #ddd;
+}
+
+.imagePreview img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 10px;
+}
+
+.imagePreview button,
+.videoActions button {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: red;
+	color: white;
+	font-size: 12px;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition:
+		transform 0.2s ease,
+		background-color 0.2s ease;
+}
+.videoActions button {
+	top: -30px;
+	right: 55%;
+	width: 30px;
+	height: 30px;
+	font-size: 14px;
+}
+
+.imagePreview button:hover,
+.videoActions button:hover {
+	transform: scale(1.2);
+	background-color: darkred;
+}
+
+.imagePreview img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.videoPreview {
+	margin-top: 8px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+}
+
+.videoPlayer {
+	width: 100%;
+	max-width: 400px;
+	border-radius: 10px;
+	outline: none;
+}
+
+.videoActions {
+	margin-top: 6px;
+}
+
+.removeButton {
+	background: #ff4d4f;
+	color: white;
+	padding: 5px 10px;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+}

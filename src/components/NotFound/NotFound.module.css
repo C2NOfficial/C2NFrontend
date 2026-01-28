@@ -1,0 +1,86 @@
+.notFound {
+	min-height: 80vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	background: #ffffff;
+	color: var(--primary-text-color);
+	font-family: var(--font-poppins);
+	padding: 2rem;
+}
+
+/* Icon */
+.icon {
+	font-size: 7rem;
+	color: var(--primary-grey);
+	margin-bottom: 1.8rem;
+}
+
+/* Title */
+.title {
+	font-size: 2.6rem;
+	font-weight: 600;
+	color: var(--primary-black);
+	margin-bottom: 0.8rem;
+	letter-spacing: 0.02em;
+}
+
+/* Subtitle */
+.subtitle {
+	font-size: 1.1rem;
+	color: #666;
+	max-width: 480px;
+	line-height: 1.7;
+	margin-bottom: 2.5rem;
+}
+
+/* Actions */
+.actions {
+	display: flex;
+	gap: 1.2rem;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+/* Primary */
+.primaryBtn {
+	padding: 1rem 2.6rem;
+	border-radius: 50px;
+	background: var(--primary-black);
+	color: #ffffff;
+	border: none;
+	font-size: 0.95rem;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition:
+		background 0.25s ease,
+		transform 0.2s ease,
+		box-shadow 0.2s ease;
+}
+
+.primaryBtn:hover {
+	background: var(--primary-black-hover);
+	transform: translateY(-1px);
+	box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+}
+
+/* Secondary */
+.secondaryBtn {
+	padding: 1rem 2.6rem;
+	border-radius: 50px;
+	background: transparent;
+	color: var(--primary-black);
+	border: 1px solid var(--primary-grey);
+	font-size: 0.95rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.25s ease;
+}
+
+.secondaryBtn:hover {
+	background: var(--primary-grey);
+}

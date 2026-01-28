@@ -1,0 +1,80 @@
+.cartTable {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 1.05rem;
+}
+
+.cartTable th,
+.cartTable td {
+	padding: 1.3rem 1rem;
+	border-bottom: 1px solid var(--primary-grey);
+	text-align: left;
+}
+
+.cartTable th {
+	font-family: var(--font-poppins);
+	font-weight: 500;
+	color: var(--primary-black);
+	font-size: 1.1rem;
+}
+
+.productCell {
+	display: flex;
+	align-items: center;
+	gap: 1.2rem;
+}
+
+.productImage {
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
+	border-radius: 8px;
+	background: var(--primary-grey);
+}
+
+.productName {
+	font-family: var(--font-poppins);
+	font-weight: 600;
+	font-size: 1.05rem;
+	color: var(--primary-black);
+}
+
+.quantityControl {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+}
+
+.quantityControl button {
+	width: 34px;
+	height: 34px;
+	border-radius: 6px;
+	border: 1px solid var(--primary-grey);
+	background: var(--primary-white);
+	font-size: 1.1rem;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.quantityControl button:hover {
+	background: var(--primary-grey);
+}
+
+.quantityControl span {
+	min-width: 28px;
+	text-align: center;
+	font-weight: 500;
+}
+
+.removeButton {
+	background: none;
+	border: none;
+	font-size: 1.4rem;
+	cursor: pointer;
+	color: var(--error-red);
+	transition: transform 0.15s ease;
+}
+
+.removeButton:hover {
+	transform: scale(1.1);
+}

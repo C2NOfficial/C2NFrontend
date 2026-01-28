@@ -1,0 +1,76 @@
+.sizeChartDiv{
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+.addRowColButtonDiv{
+	display: flex;
+	gap: 10px;
+}
+.addRowColButtonDiv button {
+	background: var(--primary-black);
+	color: white;
+	padding: 8px 18px;
+	border: none;
+	border-radius: 6px;
+	font-size: 14px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: background 0.2s ease, transform 0.1s ease;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.addRowColButtonDiv button:hover {
+	background: var(--primary-black-hover);
+	transform: translateY(-1px);
+}
+.sizeChartInputParentDiv{
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+.inputCellRows{
+	display: flex;
+	gap: 2px;
+}
+.rowRemoveButton, .colRemoveButton{
+	background: none;
+	color: black;
+	border: none;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background 0.2s ease, transform 0.1s ease;
+	line-height: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.colRemoveButton{
+	position: absolute;
+	top: 130px;
+	margin-left: 50px;
+}
+.sizeChartInputParentDiv input {
+	width: 90px;               
+	padding: 8px 10px;        
+	border: 1px solid #ddd;   
+	border-radius: 6px;
+	background: #fafafa;     
+	font-size: 14px;
+	transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.sizeChartInputParentDiv input:focus {
+	outline: none;
+	border-color: #4a90e2;     
+	background: white;
+	box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.15);
+}
+
+.sizeChartInputParentDiv {
+	display: flex;
+	align-items: center;
+	gap: 10px;                 
+	margin-bottom: 6px;        
+}

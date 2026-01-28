@@ -12,7 +12,7 @@ const TopBar: React.FC<TopBarProps> = ({ barText }) => {
 		const interval = setInterval(() => {
 			const index = Math.floor(Math.random() * barText.length);
 			setText(barText[index]);
-		}, 3000);
+		}, 2500);
 
 		return () => clearInterval(interval);
 	}, [barText]);

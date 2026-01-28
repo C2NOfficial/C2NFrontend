@@ -1,0 +1,162 @@
+.adminProductSection{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.addProductButton{
+	position: absolute;
+	right: 50px;
+	bottom: 50px;
+	border: none;
+	width: 154px;
+	border-radius: 5px;
+	height: 60px;
+	background: var(--primary-red);
+	color: white;
+	font-family: var(--font-inter);
+	font-weight: 600;
+	font-size: 17px;
+	transition: background 0.2s ease-in-out;
+}
+.addProductButton:hover{
+	cursor: pointer;
+	background: var(--primary-red-hover);
+}
+.productsSection {
+	padding: 1.5rem;
+	width: 80%;
+	background-color: #f9fafb;
+	border-radius: 12px;
+}
+
+.productsTable {
+	width: 100%;
+	border-collapse: collapse;
+	background: #ffffff;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.productsTable thead {
+	background-color: var(--primary-black);
+	color: #ffffff;
+}
+
+.productsTable th,
+.productsTable td {
+	padding: 14px 16px;
+	text-align: left;
+	font-size: 0.95rem;
+}
+
+.productsTable th {
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+.productsTable tbody tr {
+	border-bottom: 1px solid #e5e7eb;
+	transition: background-color 0.2s ease;
+}
+
+.productName {
+	font-weight: 500;
+	color: var(--primary-black);
+}
+
+.productImage {
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+	border-radius: 8px;
+	border: 1px solid #e5e7eb;
+}
+
+.pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	margin-top: 1.5rem;
+}
+
+.pagination button {
+	padding: 8px 14px;
+	border-radius: 6px;
+	border: none;
+	font-size: 0.9rem;
+	cursor: pointer;
+	background-color: #111827;
+	color: white;
+	transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+	opacity: 0.9;
+	transform: translateY(-1px);
+}
+
+.pagination button:disabled {
+	background-color: #9ca3af;
+	cursor: not-allowed;
+}
+
+.pagination span {
+	font-size: 0.95rem;
+	font-weight: 500;
+	color: #374151;
+}
+
+.actionButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+
+.editButton,
+.deleteButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 34px;
+	height: 34px;
+	border-radius: 8px;
+	border: none;
+	cursor: pointer;
+	background: transparent;
+	transition: 
+		background-color 0.2s ease,
+		transform 0.15s ease,
+		box-shadow 0.15s ease;
+}
+
+.editButton {
+	color: #2563eb; 
+}
+
+.deleteButton {
+	color: #dc2626; 
+}
+
+.editButton:hover {
+	background-color: rgba(37, 99, 235, 0.1);
+	transform: translateY(-1px);
+}
+
+.deleteButton:hover {
+	background-color: rgba(220, 38, 38, 0.1);
+	transform: translateY(-1px);
+}
+
+.editButton:active,
+.deleteButton:active {
+	transform: scale(0.95);
+}
+
+.editButton svg,
+.deleteButton svg {
+	font-size: 14px;
+}

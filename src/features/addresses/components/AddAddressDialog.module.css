@@ -1,0 +1,147 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.dialog {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dialog input {
+  padding: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.actions button {
+  padding: 0.7rem 1.5rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.actions button:first-child {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.actions button:last-child {
+  background: var(--primary-red);
+  color: white;
+}
+
+.locationBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  width: 100%;
+  padding: 0.75rem;
+
+  background: #f8f9fa;
+  color: #333;
+
+  border: 1px dashed #ccc;
+  border-radius: 6px;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.dialog input {
+  padding: 0.75rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dialog input:focus {
+  outline: none;
+  border-color: var(--primary-red);
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.15);
+}
+.dialog select {
+  padding: 0.75rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  background: white;
+  cursor: pointer;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.dialog select:focus {
+  outline: none;
+  border-color: var(--primary-red);
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.15);
+}
+
+.dialog select.inputError {
+  border-color: #dc2626;
+  background-color: #fff5f5;
+}
+
+.dialog select.inputError:focus {
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.25);
+}
+.dialog select:disabled {
+  background-color: #f5f5f5;
+  color: #666;
+  cursor: not-allowed;
+}
+.inputError {
+  border-color: #dc2626;
+  background: #fff5f5;
+}
+
+.inputError:focus {
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.25);
+}
+
+.errorText {
+  font-size: 0.75rem;
+  color: #dc2626;
+}
+.infoText {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #666;
+  text-align: center;
+}

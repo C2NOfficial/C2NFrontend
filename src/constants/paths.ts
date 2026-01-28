@@ -1,8 +1,8 @@
 export const PATHS = {
 	HOME: "/",
 	LOGIN: "/login",
+	SINGLE_PRODUCT: "/products/:slug",
 	DASHBOARD: "/dashboard",
-	ADMIN_PANEL: "/admin-panel",
 	REGISTER: "/register",
 	CART: "/cart",
 	NEW_ARRIVALS: "/new-arrivals",
@@ -10,6 +10,7 @@ export const PATHS = {
 	SHOP_ALL: "/shop-all",
 	UNISEX: "/unisex",
 	COLORS: "/colors",
+	CHECKOUT: "/checkout",
 	WISHLIST: "/wishlist",
 	FAQ: "/faq",
 	RETURN_POLICY: "/return-policy",
@@ -17,5 +18,7 @@ export const PATHS = {
 	TERMS_AND_CONDITIONS: "/terms-and-conditions",
 	CONTACT_US: "/contact-us",
 	PRIVACY_POLICY: "/privacy-policy",	
+	PAYMENT_FAILURE: "/payments/failure",
+	PAYMENT_SUCCESS: "/payments/success",
 } as const;
 

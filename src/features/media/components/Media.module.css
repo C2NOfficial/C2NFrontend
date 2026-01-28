@@ -1,0 +1,163 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.dialog {
+  background: #fff;
+  width: min(900px, 92%);
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.closeButton {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 1.6rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #475569;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.uploadSection {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.uploadLabel {
+  flex: 1;
+  border: 2px dashed var(--primary-red);
+  padding: 1.25rem;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  background: rgba(255, 0, 0, 0.05);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.uploadLabel:hover {
+  background: rgba(255, 0, 0, 0.1);
+  border-color: var(--primary-red-hover);
+}
+
+.uploadInput {
+  display: none;
+}
+
+.sectionTitle {
+  font-size: 1.2rem;
+  margin: 1rem 0 0.75rem;
+  font-weight: 600;
+}
+
+.mediaGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.mediaItem {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f8fafc;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mediaItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.previewMedia {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  display: block;
+}
+
+.removeButton {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: none;
+  background: var(--primary-red);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.removeButton:hover {
+  background: var(--primary-red-hover);
+}
+
+.submitButton {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 14px;
+  background: var(--primary-red);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.submitButton:hover {
+  background: var(--primary-red-hover);
+  transform: translateY(-1px);
+}
+
+.floatingUploadButton {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  border: none;
+  width: 160px;
+  height: 60px;
+  border-radius: 12px;
+  background: var(--primary-red);
+  color: white;
+  font-family: var(--font-inter);
+  font-weight: 600;
+  font-size: 17px;
+  cursor: pointer;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease-in-out;
+}
+
+.floatingUploadButton:hover {
+  background: var(--primary-red-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
+}
+
+.librarySection {
+  margin-top: 2rem;
+  margin-left: 20px;
+}

@@ -1,0 +1,24 @@
+.searchInput {
+	margin-top: 50px;
+	width: 100%;
+	max-width: 420px;
+	padding: 12px 14px;
+	font-size: 14px;
+	line-height: 1.4;
+	color: #111827;
+	background-color: #ffffff;
+	border: 1px solid #d1d5db;
+	border-radius: 10px;
+	outline: none;
+}
+
+.searchInput::placeholder {
+	color: #9ca3af;
+	font-weight: 400;
+}
+
+.searchInput:disabled {
+	background-color: #f3f4f6;
+	color: #9ca3af;
+	cursor: not-allowed;
+}
