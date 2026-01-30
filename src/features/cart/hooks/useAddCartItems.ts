@@ -23,7 +23,6 @@ const useAddCartItems = () => {
 			} else {
 				await saveCartItemsToFirestore(user.uid, items);
 			}
-			toast.success("Cart items added successfully");
 		} catch (err) {
 			toast.error(handleFirebaseError(err));
 		} finally {

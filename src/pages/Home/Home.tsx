@@ -102,12 +102,12 @@ const Home: React.FC<HomeProps> = ({ Reviews }) => {
 			<section className={styles.fifthSection}>
 				<img src="HomePageSection5.webp" alt="section-5" />
 				<div className={styles.textArea}>
-					<h1>CLASSIC HOODIE</h1>
+					<h1>PREMIUM TSHIRT & TROUSERS</h1>
 					<p>
-						Stay cozy and stylish with premium hoodie. Made <br />
-						from ultra-soft cotton fleece, perfect for layering and{" "}
-						<br />
-						everyday wear.
+						Experience ultimate comfort with our pure cotton T-shirt
+						and trousers. <br />
+						Soft, breathable, and perfect for everyday wear and
+						casual outings.
 					</p>
 					<button>
 						LEARN MORE <FontAwesomeIcon icon={faArrowRight} />

@@ -25,4 +25,5 @@ async function submitOrderToCFunc(checkoutData: CheckoutData) {
 		throw error;
 	}
 }
+
 export { submitOrderToCFunc };

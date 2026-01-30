@@ -22,7 +22,6 @@ const PayUForm = ({ payuRequest }: { payuRequest: PayURequest }) => {
       <input type="hidden" name="surl" value={payuRequest.surl} />
       <input type="hidden" name="furl" value={payuRequest.furl} />
       <input type="hidden" name="hash" value={payuRequest.hash} />
-      <input type="hidden" name="pg" value="UPI,CC,DC,NB,WALLET" />
     </form>
   );
 };

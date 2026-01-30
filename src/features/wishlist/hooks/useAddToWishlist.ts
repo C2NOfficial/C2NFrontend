@@ -8,15 +8,13 @@ import { useAuth } from "../../../context/Auth";
 const useAddToWishlist = () => {
 	const { user } = useAuth();
 	const { showLoading, hideLoading } = useLoadingOverlay();
-
 	const addToWishlist = async (item: WishlistItem) => {
+		showLoading();
 		if (!user) {
 			throw new Error("You need to login to add items to wishlist");
 		}
-		showLoading();
 		try {
 			await addToWishlistInFirestore(user.uid, item);
-			toast.success("Item added to wishlist");
 		} catch (error) {
 			toast.error(handleFirebaseError(error));
 		} finally {

@@ -1,0 +1,60 @@
+.image {
+	width: 60px;
+	height: 60px;
+	border-radius: 10px;
+	object-fit: cover;
+}
+
+.content {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	font-family: var(--font-jakarta);
+}
+
+.title {
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--primary-red);
+}
+
+.name {
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--primary-text-color);
+}
+
+.meta {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-top: 6px;
+}
+
+.sizeBadge {
+	background: var(--primary-grey);
+	border-radius: 999px;
+	padding: 4px 10px;
+	font-size: 12px;
+	font-weight: 600;
+	color: var(--primary-text-color);
+}
+
+.heart {
+	font-size: 16px;
+	color: var(--primary-red);
+	animation: pop 0.3s ease;
+}
+
+/* subtle heart pop */
+@keyframes pop {
+	0% {
+		transform: scale(0.8);
+		opacity: 0.6;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}

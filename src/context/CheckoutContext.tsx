@@ -18,20 +18,19 @@ export const CheckoutProvider = ({
 	const [checkoutData, setCheckoutData] = useState<Partial<CheckoutData>>({
 		items: [],
 		paymentProvider: "PayU",
-		orderStatus: "pending",
+		status: "pending",
 		checkoutUserData: { email: "", name: "", phone: "" },
 	});
 
 	useEffect(() => {
 		if (!user) return;
-
 		const email = user.email ?? "";
 		const name = user.displayName ?? "";
 		const phone = user.phoneNumber ?? "";
-
+		const uid = user.uid
 		setCheckoutData((prev) => ({
 			...prev,
-			checkoutUserData: { email, name, phone },
+			checkoutUserData: { email, name, phone, uid },
 		}));
 	}, [user]);
 

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
 	DASHBOARD_TABS,
 	DASHBOARD_TABS_BY_ROLE,
@@ -9,7 +9,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
 import Categories from "../../categories/components/Categories";
 import { PATHS } from "../../../constants/paths";
-import { toast } from "react-toastify";
 import { useAuth } from "../../../context/Auth";
 import Products from "../../products/components/Products";
 import Media from "../../media/components/Media";
@@ -17,20 +16,11 @@ import { faHome } from "@fortawesome/free-solid-svg-icons";
 
 const Dashboard = () => {
 	const navigate = useNavigate();
-	const { user, isAdmin, loading } = useAuth();
+	const { isAdmin } = useAuth();
 	const [currentTab, setCurrentTab] = useState(
 		sessionStorage.getItem(SESSION_STORAGE_KEYS.ACTIVE_DASHBOARD_TAB) ||
 			DASHBOARD_TABS.ORDERS,
 	);
-
-	useEffect(() => {
-		if (loading) return;
-
-		if (!user) {
-			toast.error("Please login to continue");
-			navigate(PATHS.LOGIN);
-		}
-	}, [user, loading, navigate]);
 
 	const tabs = isAdmin
 		? DASHBOARD_TABS_BY_ROLE.admin

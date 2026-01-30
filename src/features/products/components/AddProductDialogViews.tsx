@@ -418,7 +418,7 @@ const ProductShipping = ({
 }: AddProductDialogViewsProps) => (
 	<div className={styles.addProductParentDiv}>
 		<div className={dialogWizardStyles.formGroup}>
-			<label>Weight (kg)</label>
+			<label>Weight (g)</label>
 			<input
 				type="number"
 				className={errors.weight ? dialogWizardStyles.errorInput : ""}

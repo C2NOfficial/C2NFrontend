@@ -4,8 +4,8 @@ import { Navigate, useLocation } from "react-router-dom";
 import { PATHS } from "../../constants/paths";
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
-	const { user, loading } = useAuth();
 	const location = useLocation();
+	const { user, loading } = useAuth();
 
 	if (loading) {
 		return <div>Loading...</div>;

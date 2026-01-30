@@ -6,6 +6,7 @@ interface CartItem{
 	product: Product //Optional product object
 	categoryId: string;
 	quantity: number;
+	price: number;
 	size: string;
 }
 

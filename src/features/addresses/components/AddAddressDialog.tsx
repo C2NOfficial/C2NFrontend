@@ -110,6 +110,7 @@ const AddAddressDialog = ({
               type="text"
               placeholder="PIN Code"
               name="zip"
+              maxLength={6}
               value={formAddress.zip}
               onChange={handleChange}
               inputMode="numeric"

@@ -56,6 +56,7 @@ async function saveCartItemsToFirestore(uid: string, cartItems: CartItem[]) {
 					size: item.size,
 					productId: item.productId,
 					categoryId: item.categoryId,
+					price: item.price,
 				},
 				{ merge: true },
 			);
@@ -149,6 +150,12 @@ function mapEachProductToCartItem(
 	});
 }
 
+function getCartChargeableWeight(cart: CartItem[]): number {
+	return cart.reduce((total, item) => {
+		return total + (item.product.weight * item.quantity);
+	}, 0);
+}
+
 export {
 	fetchCartItemsFromFirestore,
 	saveCartItemsToFirestore,
@@ -159,4 +166,5 @@ export {
 	removeCartItemFromLocalStorage,
 	clearCartFromLocalStorage,
 	mapEachProductToCartItem,
+	getCartChargeableWeight,
 };

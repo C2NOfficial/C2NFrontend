@@ -10,7 +10,13 @@ import { type PayURequest } from "../../payments/model";
 import { toast } from "react-toastify";
 import PayUForm from "../../payments/components/PayUForm";
 import usePlaceOrder from "../hooks/usePlaceOrder";
-import { calculateTax, calculateTotal } from "../../../constants/tax";
+import {
+	calculateTax,
+	calculateTotal,
+	calculateTotalWithShipping,
+} from "../../../constants/tax";
+import { getEstimatedShippingCost } from "../../../utils/delhivery";
+import { getCartChargeableWeight } from "../../cart/service";
 
 const CHECKOUT_STEPS = ["CART", "SHIPPING & PAYMENT"];
 
@@ -29,6 +35,7 @@ const Checkout = () => {
 	const [openUserDialog, setOpenUserDialog] = useState(false);
 	const [payURequest, setPayURequest] = useState<PayURequest | null>(null);
 	const { placeOrder } = usePlaceOrder();
+	const [isFetchingShippingCost, setIsFetchingShippingCost] = useState(false);
 
 	const renderStepComponent = () => {
 		return (
@@ -45,11 +52,26 @@ const Checkout = () => {
 				{activeStepIndex === 1 && (
 					<AddressBook
 						selectedAddressID={checkoutData.address?.id}
-						onSelectAddress={(address) =>
-							setCheckoutData((prev) => ({
-								...prev,
-								address: address,
-							}))
+						onSelectAddress={(address) => {
+							setIsFetchingShippingCost(true);
+							const subtotal = cart.reduce((t, i) => t + i.product.mrp * i.quantity, 0);
+							getEstimatedShippingCost(
+								getCartChargeableWeight(cart),
+								address.zip,
+							).then((shippingCharge: number) => {
+								setCheckoutData((prev) => ({
+									...prev,
+									address: address,
+									shippingCharge: shippingCharge,
+									total: calculateTotalWithShipping(
+										subtotal,
+										shippingCharge,
+									),
+								}));
+								setIsFetchingShippingCost(false);
+							})
+						}
+							
 						}
 					/>
 				)}
@@ -73,6 +95,11 @@ const Checkout = () => {
 						key={step}
 						onClick={() => {
 							if (index < activeStepIndex) {
+								setCheckoutData(prev => ({
+									...prev,
+									shippingCharge: 0,
+									total: calculateTotal(prev.subTotal ?? 0)
+								}));
 								setActiveStepIndex(index);
 							}
 						}}
@@ -92,6 +119,7 @@ const Checkout = () => {
 				<div className={styles.summary}>
 					<CheckoutSummary
 						activeStepIndex={activeStepIndex}
+						isFetchingShipping={isFetchingShippingCost}
 						primaryButtonFn={() => {
 							switch (activeStepIndex) {
 								case 0: {
@@ -106,7 +134,7 @@ const Checkout = () => {
 										items: cart,
 										subtotal: subtotal,
 										tax: calculateTax(subtotal),
-										total: calculateTotal(subtotal)
+										total: calculateTotal(subtotal),
 									}));
 									setActiveStepIndex(activeStepIndex + 1);
 									break;
@@ -119,36 +147,23 @@ const Checkout = () => {
 										);
 										return;
 									}
-									setActiveStepIndex(activeStepIndex + 1);
-									break;
-								}
-								case 2: {
-									//Payment step
-									if (
-										!checkoutData.paymentProvider ||
-										checkoutData.paymentProvider.length ===
-										0
-									) {
-										toast.error(
-											"Payment provider is not selected. Please select a payment provider to proceed",
-										);
-									}
 									if (
 										!checkoutData.checkoutUserData ||
-										checkoutData.checkoutUserData.email ===
+										checkoutData.checkoutUserData.email ==
 										"" ||
-										checkoutData.checkoutUserData.name ===
+										checkoutData.checkoutUserData.name ==
 										"" ||
-										checkoutData.checkoutUserData.phone ===
+										checkoutData.checkoutUserData.phone ==
 										""
 									) {
 										setOpenUserDialog(true);
-									} else {
-										placeOrder().then((data) =>
-											setPayURequest(data),
-										);
+										return;
 									}
-									break;
+									placeOrder().then(
+										(req: PayURequest | null) => {
+											if (req) setPayURequest(req);
+										},
+									);
 								}
 							}
 						}}

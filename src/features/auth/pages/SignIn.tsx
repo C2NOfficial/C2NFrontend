@@ -10,9 +10,9 @@ import { GoogleAuthButton } from "../components/GoogleAuthButtons";
 import useThirdPartyAuth from "../hooks/useThirdPartyAuth";
 
 const SignIn = () => {
-	const navigate = useNavigate();
 	const { showLoading, hideLoading } = useLoadingOverlay();
 	const { googleAuth } = useThirdPartyAuth();
+	const navigate = useNavigate();
 
 	const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
@@ -21,9 +21,9 @@ const SignIn = () => {
 			const formData = new FormData(event.currentTarget);
 			const email = formData.get("email") as string;
 			const password = formData.get("password") as string;
-			await signInWithEmailAndPassword(auth, email, password).then(() => {
-				navigate(PATHS.DASHBOARD);
-			});
+
+			await signInWithEmailAndPassword(auth, email, password);
+			navigate(PATHS.DASHBOARD);
 		} catch (err) {
 			toast.error(handleFirebaseError(err));
 		} finally {

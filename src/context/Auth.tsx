@@ -1,9 +1,4 @@
-import {
-  onAuthStateChanged,
-  getIdTokenResult,
-  type User,
-  type IdTokenResult,
-} from "firebase/auth";
+import { type User, type IdTokenResult, onIdTokenChanged } from "firebase/auth";
 import { createContext, useContext, useEffect, useState } from "react";
 import { auth } from "../firebase/init";
 import { useLoadingOverlay } from "./LoadingOverlay";
@@ -31,7 +26,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+    const unsubscribe = onIdTokenChanged(auth, async (firebaseUser) => {
       if (!firebaseUser) {
         setUser(null);
         setIdTokenResult(null);
@@ -40,8 +35,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         return;
       }
 
-      // Force refresh token to get latest claims
-      const tokenResult = await getIdTokenResult(firebaseUser, true);
+      const tokenResult = await firebaseUser.getIdTokenResult();
 
       setUser(firebaseUser);
       setIdTokenResult(tokenResult);
@@ -65,7 +59,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, idTokenResult, isAdmin, signOut }}>
+    <AuthContext.Provider
+      value={{ user, loading, idTokenResult, isAdmin, signOut }}
+    >
       {children}
     </AuthContext.Provider>
   );

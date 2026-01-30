@@ -1,49 +1,116 @@
-.container {
-  min-height: 100vh;
+.page {
+  min-height: 80vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   background-color: var(--primary-white);
-  font-family: var(--font-jakarta);
-  text-align: center;
   padding: 2rem;
 }
 
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+  /* Animation */
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeInScale 0.5s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .icon {
-  font-size: 80px;
-  color: var(--error-red);
-  margin-bottom: 1.5rem;
+  font-size: 4.5rem;
+  color: #e53935; /* red for failure */
+  margin-bottom: 1.2rem;
 }
 
 .title {
   font-family: var(--font-anton);
-  font-size: 2.5rem;
-  color: var(--primary-red);
-  margin-bottom: 1rem;
+  font-size: 2.3rem;
+  color: #e53935;
+  letter-spacing: 1px;
+  margin-bottom: 0.8rem;
 }
 
 .subtitle {
-  font-size: 1.2rem;
+  font-family: var(--font-inter);
+  font-size: 1.05rem;
   color: var(--primary-text-color);
+  margin-bottom: 1.8rem;
+}
+
+.orderBox {
+  background: var(--primary-grey);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.orderLabel {
+  display: block;
+  font-family: var(--font-inter);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #666;
+  margin-bottom: 0.3rem;
+}
+
+.orderId {
+  font-family: var(--font-inter);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+  word-break: break-all;
+}
+
+.infoBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: center;
+  background: rgba(229, 57, 53, 0.08); /* light red background for failure */
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  font-family: var(--font-inter);
+  font-size: 0.9rem;
+  color: #c62828; /* dark red text */
   margin-bottom: 2rem;
-  max-width: 500px;
 }
 
 .button {
-  padding: 0.75rem 2rem;
-  background-color: var(--primary-red);
-  color: var(--primary-white);
-  font-family: var(--font-poppins);
+  display: inline-block;
+  width: 50%;
+  padding: 0.9rem;
+  background-color: #e53935; /* red */
+  color: #ffffff;
+  font-family: var(--font-inter);
   font-weight: 600;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+  border-radius: 10px;
   text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .button:hover {
-  background-color: var(--primary-red-hover);
+  background-color: #d32f2f;
+  transform: translateY(-1px);
 }

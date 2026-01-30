@@ -13,6 +13,8 @@ import type { WishlistItem } from "../../wishlist/model";
 import { useWishlistContext } from "../../../context/Wishlist";
 import NotFound from "../../../components/NotFound/NotFound";
 import SingleProductSkeletonLoader from "./SkeletonLoaders";
+import AddedToCartNotification from "../../cart/components/AddedToCartNotification";
+import AddedToWishlistNotification from "../../wishlist/pages/AddedToWishllistNotification";
 
 const SingleProductPage = () => {
 	const { slug } = useParams();
@@ -24,8 +26,15 @@ const SingleProductPage = () => {
 
 	const { addCartItems } = useAddCartItems();
 	const { cart, refreshCart } = useCartContext();
-	const { refreshWishlist } = useWishlistContext();
+	const [showAddedToCartNotification, setShowAddedToCartNotification] =
+		useState(false);
+
+	const { wishlist, refreshWishlist } = useWishlistContext();
 	const { addToWishlist } = useAddToWishlist();
+	const [
+		showAddedToWishlistNotification,
+		setShowAddedToWishlistNotification,
+	] = useState(false);
 
 	useEffect(() => {
 		if (!slug) return;
@@ -159,16 +168,20 @@ const SingleProductPage = () => {
 					<button
 						className={styles.addToCart}
 						onClick={() => {
-							const item = {
-								id: `${product.id}_${size}`,
-								productId: product.id,
-								quantity: quantity,
-								size: size,
-								categoryId: product.category.id,
-							} as CartItem;
-							addCartItems([...cart, item]).then(() =>
-								refreshCart(),
-							);
+							addCartItems([
+								...cart,
+								{
+									id: `${product.id}_${size}`,
+									productId: product.id,
+									quantity: quantity,
+									size: size,
+									price: product.mrp,
+									categoryId: product.category.id,
+								} as CartItem,
+							]).then(() => {
+								setShowAddedToCartNotification(true);
+								refreshCart();
+							});
 						}}
 					>
 						ADD TO CART
@@ -178,10 +191,18 @@ const SingleProductPage = () => {
 						<button
 							className={styles.wishlistBtn}
 							onClick={() => {
-								addToWishlist({
-									id: product.id,
-								} as WishlistItem);
-								refreshWishlist();
+								if (
+									!wishlist.find((w) => w.id === product.id)
+								) {
+									addToWishlist({
+										id: product.id,
+									} as WishlistItem).then(() => {
+										setShowAddedToWishlistNotification(
+											true,
+										);
+										refreshWishlist();
+									});
+								}
 							}}
 						>
 							ADD TO WISHLIST
@@ -264,6 +285,18 @@ const SingleProductPage = () => {
 					</details>
 				</section>
 			</div>
+			<AddedToCartNotification
+				product={product}
+				quantity={quantity}
+				size={size}
+				isOpen={showAddedToCartNotification}
+				onClose={() => setShowAddedToCartNotification(false)}
+			/>
+			<AddedToWishlistNotification
+				product={product}
+				isOpen={showAddedToWishlistNotification}
+				onClose={() => setShowAddedToWishlistNotification(false)}
+			/>
 		</section>
 	);
 };
